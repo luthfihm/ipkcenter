@@ -3,7 +3,7 @@
 }
 
 .clear{
-	height: 30px;
+	height: 80px;
 }
 
 .sectiontitle{
@@ -83,6 +83,25 @@
     margin-top: 40px;
     margin-bottom: 20px;
 }
+/* All levels of nav */
+.sidenav > li > a {
+  display: block;
+  color: #716b7a;
+  padding: 5px 20px;
+}
+.sidenav  > li > a:hover,
+.sidenav  > li > a:focus {
+  text-decoration: none;
+  background-color: #e5e3e9;
+}
+.sidenav  .nav > .active > a,
+.sidenav  .nav > .active:hover > a,
+.sidenav  .nav > .active:focus > a {
+  font-weight: bold;
+  border-left: 2px solid #112540;
+  color: #112540;
+  background-color: transparent;
+}
 
 .body {
   position: relative;
@@ -90,7 +109,7 @@
 .affix {
   width: inherit; /*//helped keep the content the same size on fluid layouts*/
   position: fixed;
-  top: 70px;  /*height of the nav*/
+  top: 120px;  /*height of the nav*/
 }
 .affix-bottom {
   width: inherit;
@@ -100,4 +119,5 @@
 }
 .affix-top {
   /*//i didn't need this style but you might*/
+  margin-top: 100px;
 }

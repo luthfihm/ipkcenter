@@ -4,6 +4,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-9">
+			<div class="clear" id="history"></div> <!-- supaya section ga ketutup navbar -->
 			<!-- history -->
 			<section>
 				<div class="page-header">
@@ -22,6 +23,8 @@
 					market enhancement, and opportunities.</p>
 			</section>
 
+			
+			<div class="clear" id="whoarewe"></div> <!-- supaya section ga ketutup navbar -->
 			<!-- whoarewe -->
 			<section>
 				<div class="page-header">
@@ -41,6 +44,7 @@
 					activities in Indonesia.</p>	
 			</section>
 
+			<div class="clear" id="vision"></div> <!-- supaya section ga ketutup navbar -->
 			<!-- vision -->
 			<section>
 				<div class="page-header">
@@ -53,6 +57,7 @@
 	            to its utmost potential.</p>
 			</section>
 
+			<div class="clear" id="mission"></div> <!-- supaya section ga ketutup navbar -->
 			<!-- mission -->
 			<section>
 				<div class="page-header">
@@ -68,6 +73,7 @@
 	            </ul>
 			</section>
 
+			<div class="clear" id="concerns"></div> <!-- supaya section ga ketutup navbar -->
 			<!-- concerns -->
 			<section>
 				<div class="page-header">
@@ -92,6 +98,7 @@
 					actually provide.</p>
 			</section>
 
+			<div class="clear" id="benefit"></div> <!-- supaya section ga ketutup navbar -->
 			<!-- benefit -->
 			<section>
 				<div class="page-header">
@@ -114,17 +121,22 @@
 			</section>
 
 		</div>
-		<div class="col-md-3">
-			<div id="affix-nav">
-				<ul class="nav sidenav" data-spy="affix" data-offset-top="300" data-offset-bottom="200">
-					<li>Brief History</li>
-					<li>Who Are We</li>
-					<li>Our Vision</li>
-					<li>Our Missions</li>
-					<li>Our Concerns</li>
-					<li>Benefits of Being IPKC Member</li>
-				</ul>
-			</div>
+		<div class="sidenav col-md-3">
+			<ul class="nav nav-stacked"  data-spy="affix" data-offset-top="400" data-offset-bottom="200">
+				<li class="active"><a href="#history">Brief History</a></li>
+				<li><a href="#whoarewe">Who Are We</a></li>
+				<li><a href="#vision">Our Vision</a></li>
+				<li><a href="#mission">Our Missions</a></li>
+				<li><a href="#concerns">Our Concerns</a></li>
+				<li><a href="#benefit">Benefits of Being IPKC Member</a></li>
+			</ul>
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+	$('body').scrollspy({
+	    target: '.sidenav',
+	    offset: 40
+	});
+</script>
