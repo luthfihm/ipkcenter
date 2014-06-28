@@ -115,8 +115,8 @@
 
 		</div>
 		<div class="col-md-3">
-			<div class="affix">
-				<ul class="nav sidenav">
+			<div id="affix-nav">
+				<ul class="nav sidenav" data-spy="affix" data-offset-top="300" data-offset-bottom="200">
 					<li>Brief History</li>
 					<li>Who Are We</li>
 					<li>Our Vision</li>
