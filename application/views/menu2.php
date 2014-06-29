@@ -20,6 +20,7 @@
         <li><a href="#">About</a></li>
         <li><a href="#">Events</a></li>
         <li><a href="#">Contact</a></li>
+        <li><a href="../admin">Log In</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
