@@ -3,7 +3,7 @@
     <li><a href="<?php echo base_url('admin/main'); ?>"><i class="icon-dashboard"></i> Dashboard</a></li>
     <li class="active"><i class="fa fa-edit"></i> New Event</li>
 </ol>
-<form role="form">
+<form role="form" id="form-new">
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
@@ -16,11 +16,16 @@
                 <label>Category</label>
                 <select class="form-control" id="category">
                     <option value="NULL">Uncategorized</option>
+                    <?php
+                        foreach ($categories as $category){
+                    ?>
+                    <option value="<?php echo $category->id_kat; ?>"><?php echo $category->title; ?></option>
+                    <?php } ?>
                     <option value="other">Other</option>
                 </select>
             </div>
             <div class="form-group has-feedback" id="cat-other" style="display: none;">
-                <label for="title">Category</label>
+                <label for="other">Category</label>
                 <input type="text" class="form-control" id="other" placeholder="Other">
                 <a href="#" onclick="show_cat();"><span class="fa fa-caret-square-o-down form-control-feedback"></span></a>
             </div>
@@ -32,9 +37,12 @@
             </div>
         </div>
     </div>
-    <textarea class="form-control tinymce" rows="8"></textarea>
+    <textarea class="form-control tinymce" rows="9" id="content"></textarea>
     <br>
-    <button type="submit" class="btn btn-default">Submit</button>
+    <button type="submit" class="btn btn-default" id="btn-submit">Submit</button>
+    <div id="loading" style="display: none;">
+        <img src="<?php echo base_url('assets/images/loading2.gif')?>">
+    </div>
 </form>
 <script>
     $(document).ready(function () {
@@ -44,6 +52,48 @@
                 $("#cat").hide();
                 $("#cat-other").show();
             }
+        });
+        $("#form-new").submit(function () {
+            var title = $("#title").val();
+            var category = $("#category").val();
+            var other = $("#other").val();
+            var tags = $("#tags").val();
+            var content = $("#content").val();
+            if ((title != "") && (tags != "") && (content != "")) {
+                if ((category == "other") && (other == "")) {
+                    alert("Field uncomplete!");
+                }
+                else {
+                    $.ajax({
+					    type	: "POST",
+                        url : "<?php echo base_url('ajax/new_event'); ?>",
+                        data : {
+                            title : title,
+                            category : category,
+                            other : other,
+                            tags : tags,
+                            content : content
+                        },
+                        success	: function(html){
+						    if (html == 'true'){
+							    window.location = "<?php echo base_url('admin/main'); ?>";
+						    }else{
+							    alert("Perintah gagal dilakukan!");
+                                $("#loading").hide();
+						        $("#btn-submit").show();
+						    }
+                        },
+                        beforeSend : function(){
+						    $("#btn-submit").hide();
+                            $("#loading").show();
+					    }
+                    });
+                }
+            }
+            else {
+                alert("Field uncomplete!");
+            }
+            return false;
         });
     });
     function show_cat() {

@@ -39,6 +39,7 @@ class Admin extends CI_Controller{
     {
 		if ($this->admin_model->is_logged_in()){
 			$data['content'] = 'admin/new';
+            $data['categories'] = $this->events_model->GetListCategory();
 			$this->load->view('admin/page',$data);
 		}else{
 			redirect('admin/login');

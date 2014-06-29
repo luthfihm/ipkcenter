@@ -26,7 +26,7 @@
 	        $(document).ready(function(){
 	            $('.tinymce').tinymce({
 	                theme : "modern",
-	                menubar : true,
+	                menubar : false,
 				    plugins: [
 			            "code advlist autolink link image lists charmap preview hr anchor pagebreak",
 			            "searchreplace wordcount visualblocks visualchars insertdatetime media nonbreaking fullscreen",
