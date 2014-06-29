@@ -35,6 +35,16 @@ class Admin extends CI_Controller{
 		}	
 	}
 
+    function new_event()
+    {
+		if ($this->admin_model->is_logged_in()){
+			$data['content'] = 'admin/new';
+			$this->load->view('admin/page',$data);
+		}else{
+			redirect('admin/login');
+		}	
+	}
+
     function logout()
     {
         session_start();
