@@ -46,7 +46,7 @@
     padding-right: 50px;
     height: 250px;
 }
-#events { 
+#profiles { 
     background: #262524;
     height: auto;  
     margin: 0 auto;
@@ -57,9 +57,14 @@
     padding: 100px 0;
     color: #fff;
 }
-#events .overview{
-    height: 250px;
+#profiles .overview{
+    /*height: 250px;*/
 }
+.profimage {
+  height: 75px;
+  text-align: center;
+}
+
 #contact { 
     background: url(../images/street1.jpg) 50% 0 fixed; 
     height: auto;
