@@ -27,10 +27,68 @@ class Admin extends CI_Controller{
 
     function main($p=1)
     {
-		if ($this->admin_model->is_logged_in()){
+		if (($this->admin_model->is_logged_in())&&($p>0)){
 			$data['content'] = 'admin/main';
             $data['categories'] = $this->events_model->GetListCategory();
-            $data['events'] = $this->events_model->GetEvents(10,$p-1);
+            $data['events'] = $this->events_model->GetEvents(10,($p-1)*10);
+            $data['kat'] = 'all';
+            if($p == 1)
+            {
+                $data['prev'] = FALSE;
+            }
+            else
+            {
+                $data['prev'] = $this->events_model->IsPageExist(10,($p-2)*10);
+            }
+            $data['next'] = $this->events_model->IsPageExist(10,$p*10);
+            $data['page'] = $p;
+			$this->load->view('admin/page',$data);
+		}else{
+			redirect('admin/login');
+		}	
+	}
+
+    function kat($kat,$p=1)
+    {
+		if (($this->admin_model->is_logged_in())&&($p>0)){
+			$data['content'] = 'admin/main';
+            $data['categories'] = $this->events_model->GetListCategory();
+            $data['events'] = $this->events_model->GetEventsByKat($kat,10,($p-1)*10);
+            $data['kat'] = $kat;
+            if($p == 1)
+            {
+                $data['prev'] = FALSE;
+            }
+            else
+            {
+                $data['prev'] = $this->events_model->IsPageExistKat($kat,10,($p-2)*10);
+            }
+            $data['next'] = $this->events_model->IsPageExistKat($kat,10,$p*10);
+            $data['page'] = $p;
+			$this->load->view('admin/page',$data);
+		}else{
+			redirect('admin/login');
+		}	
+	}
+
+    function unkat($p=1)
+    {
+		if (($this->admin_model->is_logged_in())&&($p>0)){
+            $kat = NULL;
+			$data['content'] = 'admin/main';
+            $data['categories'] = $this->events_model->GetListCategory();
+            $data['events'] = $this->events_model->GetEventsByKat($kat,10,($p-1)*10);
+            $data['kat'] = $kat;
+            if($p == 1)
+            {
+                $data['prev'] = FALSE;
+            }
+            else
+            {
+                $data['prev'] = $this->events_model->IsPageExistKat($kat,10,($p-2)*10);
+            }
+            $data['next'] = $this->events_model->IsPageExistKat($kat,10,$p*10);
+            $data['page'] = $p;
 			$this->load->view('admin/page',$data);
 		}else{
 			redirect('admin/login');

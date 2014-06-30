@@ -46,6 +46,15 @@
         }
         function GetEvents($limit,$offset)
         {
+            $this->db->order_by("id","desc");
+            $this->db->limit($limit,$offset);
+            $query = $this->db->get('events');
+            return $query->result();
+        }
+        function GetEventsByKat($kat,$limit,$offset)
+        {
+            $this->db->where("category",$kat);
+            $this->db->order_by("id","desc");
             $this->db->limit($limit,$offset);
             $query = $this->db->get('events');
             return $query->result();
@@ -84,6 +93,19 @@
             $this->db->where("id",$id);
             $query = $this->db->delete('tags');
             return $query;
+        }
+        function IsPageExist($limit,$offset)
+        {
+            $this->db->limit($limit,$offset);
+            $query = $this->db->get('events');
+            return ($query->num_rows > 0);
+        }
+        function IsPageExistKat($kat,$limit,$offset)
+        {
+            $this->db->where("category",$kat);
+            $this->db->limit($limit,$offset);
+            $query = $this->db->get('events');
+            return ($query->num_rows > 0);
         }
 	}
  ?>

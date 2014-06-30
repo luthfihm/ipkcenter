@@ -34,9 +34,23 @@
                         </tbody>
                     </table>
                 </div>
+                <?php
+                    if ($kat == 'all')
+                    {
+                        $link = base_url('admin/main').'/';
+                    }
+                    else if ($kat == NULL)
+                    {
+                        $link = base_url('admin/unkat').'/';
+                    }
+                    else
+                    {
+                        $link = base_url('admin/kat').'/'.$kat.'/';
+                    }
+                ?>
                 <ul class="pager">
-                <li class="previous disabled"><a href="#">&larr; Previous</a></li>
-                <li class="next"><a href="#">Next &rarr;</a></li>
+                <li class="previous <?php if (!$prev) echo 'disabled'; ?>"><a href="<?php echo $link.($page-1); ?>">&larr; Previous</a></li>
+                <li class="next <?php if (!$next) echo 'disabled'; ?>"><a href="<?php echo $link.($page+1); ?>">Next &rarr;</a></li>
                 </ul>
             </div>
         </div>
@@ -48,21 +62,21 @@
             </div>
             <div class="panel-body">
                 <div class="list-group">
-                    <a href="#" class="list-group-item active">
+                    <a href="<?php echo base_url('admin/main'); ?>" class="list-group-item <?php if ($kat == 'all') echo 'active'; ?>">
                         <span class="badge">
                             <?php echo $this->events_model->NumAll(); ?>
                         </span>
                         All
                     </a>
                     <?php foreach ($categories as $category) { ?>
-                    <a href="#" class="list-group-item">
+                    <a href="<?php echo base_url('admin/kat').'/'.$category->id_kat; ?>" class="list-group-item <?php if ($kat == $category->id_kat) echo 'active'; ?>">
                         <span class="badge">
                             <?php echo $this->events_model->NumKat($category->id_kat); ?>
                         </span>
                         <?php echo $category->title; ?>
                     </a>
                     <?php } ?>
-                    <a href="#" class="list-group-item">
+                    <a href="<?php echo base_url('admin/unkat'); ?>" class="list-group-item <?php if ($kat == NULL) echo 'active'; ?>">
                         <span class="badge">
                             <?php echo $this->events_model->NumNull(); ?>
                         </span>
