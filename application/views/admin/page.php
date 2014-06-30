@@ -67,6 +67,7 @@
                     <ul class="nav navbar-nav side-nav">
                         <li class="<?php if ($content == 'admin/main') echo 'active'; ?>"><a href="<?php echo base_url('admin/main'); ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
                         <li class="<?php if ($content == 'admin/new') echo 'active'; ?>"><a href="<?php echo base_url('admin/new_event'); ?>"><i class="fa fa-edit"></i> New Event</a></li>
+                        <li class="<?php if ($content == 'admin/file') echo 'active'; ?>"><a href="<?php echo base_url('admin/file'); ?>"><i class="fa fa-briefcase"></i> File Manager</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right navbar-user">
