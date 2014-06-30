@@ -5,6 +5,12 @@
             $query = $this->db->insert('events',$data);
             return $query;
         }
+        function EditEvent($id,$data)
+        {
+            $this->db->where("id",$id);
+            $query = $this->db->update('events',$data);
+            return $query;
+        }
         function AddCategory($title)
         {
             $query = $this->db->insert('category',array('title' => $title));
@@ -37,6 +43,47 @@
         {
             $query = $this->db->get('category');
             return $query->result();
+        }
+        function GetEvents($limit,$offset)
+        {
+            $this->db->limit($limit,$offset);
+            $query = $this->db->get('events');
+            return $query->result();
+        }
+        function GetEventByID($id)
+        {
+            $this->db->where("id",$id);
+            $query = $this->db->get('events');
+            return $query->row();
+        }
+        function NumAll()
+        {
+            $query = $this->db->get('events');
+            return $query->num_rows;
+        }
+        function NumKat($kat)
+        {
+            $this->db->where("category",$kat);
+            $query = $this->db->get('events');
+            return $query->num_rows;
+        }
+        function NumNull()
+        {
+            $this->db->where("category",NULL);
+            $query = $this->db->get('events');
+            return $query->num_rows;
+        }
+        function GetTags($id)
+        {
+            $this->db->where("id",$id);
+            $query = $this->db->get('tags');
+            return $query->result();
+        }
+        function DelTags($id)
+        {
+            $this->db->where("id",$id);
+            $query = $this->db->delete('tags');
+            return $query;
         }
 	}
  ?>

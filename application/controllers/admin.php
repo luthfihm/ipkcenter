@@ -25,10 +25,12 @@ class Admin extends CI_Controller{
 		}
 	}
 
-    function main()
+    function main($p=1)
     {
 		if ($this->admin_model->is_logged_in()){
 			$data['content'] = 'admin/main';
+            $data['categories'] = $this->events_model->GetListCategory();
+            $data['events'] = $this->events_model->GetEvents(10,$p-1);
 			$this->load->view('admin/page',$data);
 		}else{
 			redirect('admin/login');
@@ -40,6 +42,18 @@ class Admin extends CI_Controller{
 		if ($this->admin_model->is_logged_in()){
 			$data['content'] = 'admin/new';
             $data['categories'] = $this->events_model->GetListCategory();
+			$this->load->view('admin/page',$data);
+		}else{
+			redirect('admin/login');
+		}	
+	}
+
+    function edit($id)
+    {
+		if ($this->admin_model->is_logged_in()){
+			$data['content'] = 'admin/edit';
+            $data['categories'] = $this->events_model->GetListCategory();
+            $data['event'] = $this->events_model->GetEventByID($id);
 			$this->load->view('admin/page',$data);
 		}else{
 			redirect('admin/login');
