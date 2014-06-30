@@ -21,5 +21,12 @@ class Main extends CI_Controller{
 		$this->load->view('template2', $isi);
 	}
 
+	function profiles()
+	{
+		$isi['title'] = "Profiles IPKC";
+		$isi['view'] = "profiles";
+		$this->load->view('template2', $isi);	
+	}
+
 }
 ?>
