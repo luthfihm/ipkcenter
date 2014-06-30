@@ -33,10 +33,10 @@
 		{
 			$pass_encrypted = md5($pass);
 			$data = array(
-				'username_admin' => $user,
-				'password_admin' => $pass_encrypted
+				'username' => $user,
+				'password' => $pass_encrypted
 			);
-			$this->db->where('username',$this->session->userdata('username'));
+			$this->db->where('username',$this->session->userdata('username_admin'));
 			$query = $this->db->update('admin', $data); 
 			return $query;
 		}

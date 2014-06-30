@@ -24,6 +24,31 @@ class Ajax extends CI_Controller{
 		}
 	}
 
+    function change_pass()
+	{
+        if ($this->admin_model->is_logged_in()){
+	        $user = $this->input->post('username');
+	        $pass = $this->input->post('password');
+		    $query = $this->admin_model->change_pass($user,$pass);
+		    if ($query){
+			    echo "true";
+		    }else{
+			    echo "false";
+		    }
+        }
+	}
+
+	function cek_pass(){
+		$user = $this->input->post('username');
+		$pass = $this->input->post('password');
+		$query = $this->admin_model->validate($user,$pass);
+		if($query){
+			echo "true";
+		}else{
+			echo "false";
+		}
+	}
+
     function new_event()
     {
         if ($this->admin_model->is_logged_in()){

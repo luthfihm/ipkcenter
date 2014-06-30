@@ -95,9 +95,9 @@
             
             
                         <li class="dropdown user-dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Admin <b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $this->session->userdata('username_admin'); ?> <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#"><i class="fa fa-gear"></i> Settings</a></li>
+                                <li><a href="<?php echo base_url('admin/settings'); ?>"><i class="fa fa-gear"></i> Settings</a></li>
                                 <li class="divider"></li>
                                 <li><a href="<?php echo base_url('admin/logout'); ?>"><i class="fa fa-power-off"></i> Log Out</a></li>
                             </ul>
