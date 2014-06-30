@@ -135,4 +135,33 @@ class Ajax extends CI_Controller{
             }
         }
     }
+    function del_event()
+    {
+        if ($this->admin_model->is_logged_in()){
+            $query = $this->events_model->DelEvent($this->input->post('id'));
+            if ($query)
+            {
+                echo "true";
+            }
+            else
+            {
+                echo "false";
+            }
+        }
+    }
+    function add_kat()
+    {
+        if ($this->admin_model->is_logged_in()){
+            $title = $this->input->post('title');
+            $query = $this->events_model->AddCategory($title);
+            if ($query)
+            {
+                echo "true";
+            }
+            else
+            {
+                echo "false";
+            }
+        }
+    }
 }

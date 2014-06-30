@@ -11,6 +11,12 @@
             $query = $this->db->update('events',$data);
             return $query;
         }
+        function DelEvent($id)
+        {
+            $this->db->where("id",$id);
+            $query = $this->db->delete('events');
+            return $query;
+        }
         function AddCategory($title)
         {
             $query = $this->db->insert('category',array('title' => $title));

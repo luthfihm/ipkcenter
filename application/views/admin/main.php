@@ -27,7 +27,7 @@
                                 <td><?php echo $event->title; ?></td>
                                 <td>
                                     <a href="<?php echo base_url('admin/edit').'/'.$event->id; ?>"><i class="fa fa-edit"></i></a>
-                                    <a href="#" class="close">×</a>
+                                    <a href="#" class="close" onclick="del_event('<?php echo $event->id; ?>')">×</a>
                                 </td>
                             </tr>
                             <?php } ?>
@@ -83,10 +83,79 @@
                         Uncategorized
                     </a>
                 </div>
-                <div class="text-right">
-                    <a href="#"><i class="fa fa-plus"></i> Add Category</a>
+                <div class="text-right btn-cat">
+                    <a href="#" onclick="toggle_kat()"><i class="fa fa-plus"></i> Add Category</a>
+                </div>
+                <div class="form-cat" style="display: none;">
+                    <form class="form-inline" id="form-category" role="form">
+						<div class="input-group">
+      						<input type="text" class="form-control" id="category" placeholder="Title">
+      						<span class="input-group-btn">
+        						<button class="btn btn-default" type="submit"><span class="fa fa-plus"></span></button>
+                                <button class="btn btn-default" type="submit" onclick="toggle_kat()"><span>×</span></button>
+      						</span>
+    					</div>
+					</form>
                 </div>
             </div>
         </div>
     </div>
 </div><!-- /.row -->
+<script>
+    $(document).ready(function(){
+        $("#form-category").submit(function(){
+			if ($("#category").val() != ""){
+				$.ajax({
+					type	: "POST",
+					url 	: "<?php echo base_url('ajax/add_kat'); ?>",
+					data	: {
+						title : $("#category").val()
+					},
+					success	: function(html){
+						if (html == 'true'){
+							window.location = "<?php echo $link; ?>";
+						}else{
+							alert('Gagal!');
+                            $(".load-full").hide();
+						}
+					},
+					beforeSend : function(){
+						$(".load-full").show();
+					}
+				});
+			}else{
+				
+			}
+			return false;
+		});
+    });
+    function toggle_kat()
+    {
+        $(".btn-cat").toggle();
+        $(".form-cat").toggle();
+        $("#category").focus();
+    }
+    function del_event(id) {
+        if (confirm("Are you sure?"))
+        {
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url('ajax/del_event'); ?>",
+                data: {
+                    id: id
+                },
+                beforeSend: function () {
+                    $(".load-full").show();
+                },
+                success: function (html) {
+                    if (html == 'true') {
+                        window.location = "<?php echo $link; ?>";
+                    } else {
+                        alert('Gagal!');
+                        $(".load-full").hide();
+                    }
+                }
+            });
+        }
+    }
+</script>

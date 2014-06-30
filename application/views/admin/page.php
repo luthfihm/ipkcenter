@@ -15,6 +15,25 @@
         <link href="<?php echo base_url('assets/sb-admin/css/sb-admin.css'); ?>" rel="stylesheet">
         <link rel="stylesheet" href="<?php echo base_url('assets/sb-admin/font-awesome/css/font-awesome.min.css'); ?>">
 
+        <!-- Custom Style-->
+        <style>
+            .load-full
+            {
+			    height:100%;
+			    width:100%;
+			    position:fixed;
+			    left:0;
+			    top:0;
+			    z-index:10000 !important;
+                padding-top: 25%;
+                display: none;
+			    background-color:black;
+                filter: alpha(opacity=75); /* internet explorer */
+                -khtml-opacity: 0.75;      /* khtml, old safari */
+                -moz-opacity: 0.75;       /* mozilla, netscape */
+                opacity: 0.75;           /* fx, safari, opera */
+            }
+        </style>
         
         <!-- JavaScript -->
         <script src="<?php echo base_url('assets/sb-admin/js/jquery-1.10.2.js'); ?>"></script>
@@ -46,7 +65,9 @@
     </head>
 
     <body>
-
+        <div class="load-full" align="center">
+            <img src="<?php echo base_url('assets/images/loading2.gif'); ?>">
+        </div>
         <div id="wrapper">
 
             <!-- Sidebar -->
