@@ -117,7 +117,21 @@ class Admin extends CI_Controller{
 			redirect('admin/login');
 		}	
 	}
-
+    function edit_kat(){
+		if ($this->admin_model->is_logged_in()){
+			$id = $this->input->post('id_kategori');
+			$title = $this->input->post('nama_kategori');
+			$jum = count($id);
+			for ($i=0;$i<$jum;$i++){
+				$query = $this->events_model->EditCategory($id[$i],$title[$i]);
+			}
+			if($query){
+				redirect('admin/main');
+			}
+		}else{
+			redirect('admin/login');
+		}	
+	}
     function file()
     {
 		if ($this->admin_model->is_logged_in()){

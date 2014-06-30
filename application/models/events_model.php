@@ -22,6 +22,18 @@
             $query = $this->db->insert('category',array('title' => $title));
             return $query;
         }
+        function EditCategory($id,$title)
+        {
+            $this->db->where("id_kat",$id);
+            $query = $this->db->update('category',array('title' => $title));
+            return $query;
+        }
+        function DelCategory($id)
+        {
+            $this->db->where("id_kat",$id);
+            $query = $this->db->delete('category');
+            return $query;
+        }
         function AddTag($id,$tag)
         {
             $data = array(
