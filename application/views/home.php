@@ -37,6 +37,7 @@
     </div>
   </section>
 
+  <!-- profiles -->
   <section id="profiles" data-speed="4" data-type="background">
     <h1 class="sectiontitle" style="margin-bottom:50px"><b>Profiles</b></h1>
     <div class="container">
@@ -70,6 +71,35 @@
         <div class="col-xs-12 col-md-12">
           <div class="clear"></div>
           <div style="text-align:center"><a href="index.php/main/profiles"><b>More Profiles</b></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- events -->
+  <section id="events" data-speed="4" data-type="background">
+    <h1 class="sectiontitle" style="margin-bottom:50px"><b>Events</b></h1>
+    <div class="container">
+      <div class="row">
+        <?php 
+          foreach ($events->result() as $row) {
+            $string = $row->content;
+            $overview = substr($string, 0, 300).'...';
+        ?>
+          <div class="col-xs-12 col-md-4 overview">
+          <h3 class="sectiontitle"><?php echo $row->title; ?></h3>
+          <p><?php echo $overview; ?></p>
+          <div style="text-align:right"><a href="<?php echo base_url() ?>index.php/main/detail_event/<?php echo $row->id; ?>"><b>Read More</b></a></div>
+        </div>
+        <?php
+          }
+        ?>
+        <div class="clear"></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-12">
+          <div class="clear"></div>
+          <div style="text-align:center"><a href="index.php/main/events"><b>More Events</b></a></div>
         </div>
       </div>
     </div>

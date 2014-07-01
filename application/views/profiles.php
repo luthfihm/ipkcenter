@@ -1,5 +1,5 @@
 <section id="profiles">
-	<h1 class="sectiontitle" style="margin-bottom:50px"><b>Profiles</b></h1>
+	<h1 class="sectiontitle" style="margin-bottom:50px">Profiles</h1>
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-md-4 overview">

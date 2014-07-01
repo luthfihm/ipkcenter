@@ -46,6 +46,15 @@
     padding-right: 50px;
     height: 250px;
 }
+#about-header {
+    background: url(../images/seaport.jpg) 50% 0 fixed; 
+    height: 400px;
+    margin: 0 auto; 
+    width: 100%; 
+    position: relative; 
+    padding: 100px 0;
+}
+
 #profiles { 
     background: #262524;
     height: auto;  
@@ -76,6 +85,25 @@
   -moz-border-radius: 50%;
   }
 
+#events { 
+    background: url(../images/brickwall.png) 50% 0 fixed; 
+    height: auto;  
+    margin: 0 auto; 
+    width: 100%; 
+    position: relative; 
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    padding: 100px 0;
+}
+#events .overview{
+    padding-left: 50px;
+    padding-right: 50px;
+    /*height: 250px;*/
+}
+
+#repository{
+  padding: 100px 0;
+}
+
 #contact { 
     background: url(../images/street1.jpg) 50% 0 fixed; 
     height: auto;
@@ -84,15 +112,6 @@
     position: relative; 
     padding: 100px 0;
     /*color: #fff;*/
-}
-
-#about-header {
-    background: url(../images/seaport.jpg) 50% 0 fixed; 
-    height: 400px;
-    margin: 0 auto; 
-    width: 100%; 
-    position: relative; 
-    padding: 100px 0;
 }
 
 .sidenav {
