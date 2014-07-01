@@ -47,7 +47,7 @@
           <br>
           <br>
           <p>He is currently Deputy Director for Investment Development, Center for Investment Resource Development, Construction Development Agency, Ministry of Public Works and was appointed as member of Jasa Marga Audit Committee since 2011.</p>
-            <div style="text-align:right"><a href="#"><b>Read More</b></a></div>
+            <div style="text-align:right"><a href="<?php echo base_url() ?>index.php/main/detail_profile/agita"><b>Read More</b></a></div>
         </div>
         <div class="col-xs-12 col-md-4 overview">
           <h3 class="sectiontitle">Harun Al Rasyid</h3>
@@ -55,7 +55,7 @@
           <br>
           <br>
           <p>Harun al-Rasyid Lubis, fifty years old, is Associate Professor at ITB. He was born in Medan and obtained the degree B.Sc (Eng.) Civil from ITB, MSc.(Eng) Transport Planning & Engineering and Ph.D from Institute for Transport Studies, University of Leeds, UK. In 2001 he was Head of Transportation & Communication Research Center and in 2003 was Director of R & D on Infrastructure and the Region in ITB. </p>
-            <div style="text-align:right"><a href="#"><b>Read More</b></a></div>
+            <div style="text-align:right"><a href="<?php echo base_url() ?>index.php/main/detail_profile/harun"><b>Read More</b></a></div>
         </div>
         <div class="col-xs-12 col-md-4 overview">
           <h3 class="sectiontitle">Aries Firman</h3>
@@ -63,7 +63,7 @@
           <br>
           <br>
           <p>Aries has been active in infrastructure projects since his graduation from Civil Engineering Department of ITB (Indonesia, 1977). He started with on-site assignments at industrial estate development & road work projects for a major national construction firm. </p>
-          <div style="text-align:right"><a href="#"><b>Read More</b></a></div>
+          <div style="text-align:right"><a href="<?php echo base_url() ?>index.php/main/detail_profile/aries"><b>Read More</b></a></div>
         </div>
       </div>
       <div class="row">
