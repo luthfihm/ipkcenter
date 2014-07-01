@@ -121,7 +121,7 @@
 			</section>
 
 		</div>
-		<div class="sidenav col-md-3">
+		<div class="sidenav col-md-3 hidden-xs">
 			<ul class="nav nav-stacked"  data-spy="affix" data-offset-top="400" data-offset-bottom="200">
 				<li class="active"><a href="#history">Brief History</a></li>
 				<li><a href="#whoarewe">Who Are We</a></li>

@@ -20,6 +20,8 @@
         <li><a href="#about">About</a></li>
         <li><a href="#profiles">Profiles</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="index.php/main/repo">Repository</a></li>
         <li><a href="index.php/admin">Log In</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
