@@ -3744,7 +3744,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-width: 1px 0 0;
 }
 .navbar-brand {
-  background-image: url(../images/ipkc.png);
+  background-image: url('../images/ipkc.PNG');
   background-size: 100% 100%;
   float: left;
   width: 304px;
