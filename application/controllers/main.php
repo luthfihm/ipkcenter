@@ -28,5 +28,20 @@ class Main extends CI_Controller{
 		$this->load->view('template2', $isi);	
 	}
 
+	function detail_profile($nama)
+	{
+		$this->load->model('main_model','',TRUE);
+		$profile = $this->main_model->get_profile($nama);
+		$data['teks'] = $profile;
+
+		$isi['data'] = $data;
+		foreach ($profile->result() as $row) {
+			$isi['title'] = $row->name;
+		}
+
+		$isi['view'] = "detail_profile";
+		$this->load->view('template2', $isi);
+	}
+
 }
 ?>
