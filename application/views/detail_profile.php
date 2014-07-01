@@ -8,7 +8,7 @@
 <section id="profiles">
 	<ol class="breadcrumb">
 		<li><a href="<?php echo base_url() ?>">Home</a></li>
-		<li><a href="<?php echo base_url() ?>/index.php/main/profiles">Profiles</a></li>
+		<li><a href="<?php echo base_url() ?>index.php/main/profiles">Profiles</a></li>
 		<li class="active"><?php echo $name; ?></li>
 	</ol>
 	<h1 class="sectiontitle" style="margin-bottom:50px"><b><?php echo $name; ?></b></h1>
