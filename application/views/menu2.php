@@ -19,6 +19,7 @@
         <li><a href="<?php echo base_url(); ?>">Home</a></li>
         <li><a href="<?php echo base_url(); ?>index.php/main/about">About</a></li>
         <li><a href="<?php echo base_url(); ?>index.php/main/profiles">Profiles</a></li>
+        <li><a href="<?php echo base_url(); ?>index.php/main/events">Events</a></li>
         <li><a href="<?php echo base_url(); ?>#contact">Contact</a></li>
         <li><a href="<?php echo base_url(); ?>index.php/main/repo">Repository</a></li>
         <li><a href="<?php echo base_url(); ?>index.php/admin">Log In</a></li>
