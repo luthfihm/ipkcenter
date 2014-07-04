@@ -72,12 +72,15 @@ class Main extends CI_Controller{
 		$this->load->view('template2', $isi);		
 	}
 
-	function repo()
+	function repo($dir = 'source/repo')
 	{
+		// if ($dir == null){
+		// 	$dir = 'source/repo';	
+		// }
         $this->load->helper('directory');
 		$isi['title'] = "Repository";
 		$isi['view'] = "repo";
-        $dir = 'source/repo';
+        
         $isi['dir'] = $dir;
         $isi['files'] = directory_map('./'.$dir.'/',1);
 		$this->load->view('template2', $isi);
