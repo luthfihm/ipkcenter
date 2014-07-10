@@ -12,7 +12,7 @@
 					for ($i=2; $i < $arr_size; $i++) {
 						$folderpath = $folderpath.$arr[$i];
 						if ($i != $arr_size-1)
-							$folderreq = urlencode($dir."/".$folderpath);
+							$folderreq = urlencode("source/repo/".$folderpath);
 						else
 							$folderreq = urlencode($dir); 
 						?>
