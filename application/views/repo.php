@@ -22,7 +22,7 @@
 				?>
 				
 			</ol></h4>
-			<div class="col-md-4 col-xs-12">
+			<div class="col-md-12 col-xs-12">
 			<?php foreach ($files as $file) {
                     	$path = urlencode($dir."/".$file);
                     	if (strpos($file,'.') === false) { ?>
